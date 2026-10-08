@@ -5,7 +5,7 @@ Claude Code speaks its replies aloud on macOS, shuts up the moment you send a me
 ## Install (any Mac)
 
 ```bash
-claude plugin marketplace add IncredibleMrTim/claude-chat   # private repo: needs GitHub access (gh auth login) on that Mac
+claude plugin marketplace add IncredibleMrTim/claude-chat
 claude plugin install claude-voice@claude-voice
 ```
 
