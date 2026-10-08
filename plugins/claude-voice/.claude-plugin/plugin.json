@@ -1,0 +1,6 @@
+{
+  "name": "claude-voice",
+  "description": "Claude speaks its replies aloud (macOS), hushes when you send a message, and can be muted with /claude-voice:toggle.",
+  "version": "1.0.0",
+  "author": { "name": "Tim Smart Technology" }
+}

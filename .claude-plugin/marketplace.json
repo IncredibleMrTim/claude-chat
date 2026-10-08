@@ -1,0 +1,12 @@
+{
+  "name": "claude-voice",
+  "description": "Spoken replies for Claude Code on macOS",
+  "owner": { "name": "Tim Smart Technology" },
+  "plugins": [
+    {
+      "name": "claude-voice",
+      "source": "./plugins/claude-voice",
+      "description": "Claude speaks its replies aloud, hushes when you send a message, and has a mute toggle."
+    }
+  ]
+}
