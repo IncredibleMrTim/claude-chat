@@ -29,7 +29,7 @@ else
 fi
 SAY_PID=$!
 
-# Tapping space cuts speech off. Compiled on first use (and when the source
+# Tapping the space bar cuts speech off. Compiled on first use (and when the source
 # changes) so the plugin stays portable; set CLAUDE_VOICE_SPACE_STOP=0 to skip.
 if [ "${CLAUDE_VOICE_SPACE_STOP:-1}" = "1" ]; then
   BIN_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/claude-voice"

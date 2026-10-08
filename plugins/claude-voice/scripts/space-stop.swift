@@ -1,5 +1,5 @@
-// Watches for the spacebar and kills the `say` process it is given, so tapping
-// space (e.g. to start dictation) cuts Claude off mid-sentence.
+// Watches for the space bar and kills the `say` process it is given, so tapping
+// the space bar (e.g. to start dictation) cuts Claude off mid-sentence.
 // Usage: space-stop <say-pid>. Exits as soon as that process finishes.
 // Needs Input Monitoring permission for the terminal app (System Settings >
 // Privacy & Security > Input Monitoring); without it the tap can't be created.
@@ -9,7 +9,7 @@ guard CommandLine.arguments.count > 1, let sayPid = Int32(CommandLine.arguments[
 
 let eventMask = CGEventMask(1 << CGEventType.keyDown.rawValue)
 let callback: CGEventTapCallBack = { _, type, event, _ in
-    // Key code 49 is the spacebar. Re-read the pid here because C callbacks can't capture it.
+    // Key code 49 is the space bar. Re-read the pid here because C callbacks can't capture it.
     if type == .keyDown, event.getIntegerValueField(.keyboardEventKeycode) == 49,
        let pidArgument = CommandLine.arguments.dropFirst().first, let pid = Int32(pidArgument) {
         kill(pid, SIGTERM)
