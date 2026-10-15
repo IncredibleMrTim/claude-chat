@@ -47,6 +47,9 @@ def clean_for_speech(text):
     text = re.sub(r"(?<!\w)[~.]?/?[\w.-]+(?:/[\w.\[\]-]+)+/?", "", text)  # bare file paths
     text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)      # links -> label
     text = re.sub(r"https?://\S+", "", text)                  # bare urls
+    text = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", " ", text)       # camelCase -> separate words
+    text = re.sub(r"\bQ\s?&\s?A\b", "Q and A", text, flags=re.I)  # `say` skips "&"
+    text = re.sub(r"\bQA\b", "Q A", text, flags=re.I)  # `say` reads "QA" as "kwa"
     text = re.sub(r"[*_#>|]+", "", text)                      # markdown marks
     # Emoji and their joiners/modifiers, so `say` doesn't read out their names.
     text = re.sub("[\U0001F000-\U0001FAFF☀-➿⬀-⯿️‍]", "", text)
