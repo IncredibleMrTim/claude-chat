@@ -19,7 +19,8 @@ These live outside the plugin, because plugins can't set them:
 
 ## Use
 
-- Replies are spoken automatically. Sending a message stops the voice mid-sentence.
+- Replies are spoken automatically, one after another. If a reply finishes while another is being spoken (for example from a second Claude Code window), it waits its turn instead of talking over it.
+- Sending a message, or tapping the space bar, stops the voice mid-sentence and clears any replies still waiting.
 - `/claude-voice:toggle` mutes or unmutes (creates/removes `~/.claude/voice-muted`).
 - Tuning via env vars: `CLAUDE_VOICE_RATE` (default 185 wpm), `CLAUDE_VOICE_MAX_CHARS` (default 900).
 
